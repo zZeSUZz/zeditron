@@ -111,3 +111,44 @@ button {
     transform: scale(1);
   }
 }
+/* Animate the logo in more cinematically */
+@keyframes logoEnter {
+  0% {
+    transform: scale(0.5) rotate(-30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.logo {
+  animation: logoEnter 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Slide-in sections */
+.about, .projects, .contact {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.about.visible,
+.projects.visible,
+.contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover glow effect for button */
+button:hover {
+  background: linear-gradient(to right, #9b5de5, #8f00ff);
+  box-shadow: 0 0 15px #9b5de5;
+}
+
+/* Hover glow for project cards */
+.project-item:hover {
+  background: #1f1f1f;
+  box-shadow: 0 0 10px #9b5de5;
+}
